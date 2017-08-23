@@ -6,17 +6,19 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      name: 'React 123'
+      number: 1
     }
   }
 
   render() {
     return (
       <div className="test">
-        why you are not use??
+        this is a hot reload test
+        <p>success</p>
         <p>
-          {this.state.name}
+          {this.state.number}
         </p>
+        <button onClick={()=>this.setState({number:this.state.number + 1})}>+</button>
       </div>
     )
   }
