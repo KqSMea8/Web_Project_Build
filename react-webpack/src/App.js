@@ -1,24 +1,29 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import Button from './Button'
-import Table from './Table'
+import Button from './components/Button'
+import Input from './components/Input'
 import './styles.css'
 
 class App extends Component {
   constructor() {
     super()
-    this.state = {
-      number: 1
-    }
   }
 
   render() {
     return (
       <div className="test">
         <Button
-          
+          size="large"
+          buttonFont="啊啊啊啊"
         />
-        <button onClick={()=>this.setState({number:this.state.number + 1})}>+</button>
+        <Button
+          size="small"
+          buttonFont="三大大大大"
+        />
+        <Button/>
+        <Input
+          type = 'date'
+        />
       </div>
     )
   }
