@@ -13,8 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="test">
-        this is a hot reload test
-        <p>success</p>
+        <p>success123132</p>
         <p>
           {this.state.number}
         </p>

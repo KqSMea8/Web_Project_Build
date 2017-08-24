@@ -1,6 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+// const ExtractTextPlugin = require('extract-text-webpack-plugin')
 // const DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = {
@@ -33,6 +33,10 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'url-loader',
         options: {
@@ -40,19 +44,12 @@ module.exports = {
           name: '[name].[ext]?[hash]'
         }
       },
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
-      }
     ]
   },
   plugins: [
     //new DashboardPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin("../dist/styles.css"),
-    new webpack.optimize.CommonsChunkPlugin({ name: "vendor" })
+    // new ExtractTextPlugin('../dist/styles.css'),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
   ]
 }
