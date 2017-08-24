@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="test">
-        <p>success123132</p>
+        <p>success</p>
         <p>
           {this.state.number}
         </p>

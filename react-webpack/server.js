@@ -9,6 +9,7 @@ const compiler = webpack(config)
 const server = new webpackDevServer(compiler, {
     hot: true,
     noInfo: true,
+    quiet: true,
     filename: config.output.filename,
     publicPath: config.output.publicPath,
     stats: {

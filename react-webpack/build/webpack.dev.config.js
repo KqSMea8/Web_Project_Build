@@ -1,8 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
+var Dashboard = require('webpack-dashboard');
+var DashboardPlugin = require('webpack-dashboard/plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin')
-// const DashboardPlugin = require('webpack-dashboard/plugin')
-
+var dashboard = new Dashboard();
 module.exports = {
   entry: {
     main: [
@@ -46,8 +47,12 @@ module.exports = {
       },
     ]
   },
+  stats: {
+    chunks: false,
+    children: false
+  },
   plugins: [
-    //new DashboardPlugin(),
+    new DashboardPlugin(dashboard.setData),
     new webpack.HotModuleReplacementPlugin(),
     // new ExtractTextPlugin('../dist/styles.css'),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
