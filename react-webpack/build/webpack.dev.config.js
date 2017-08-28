@@ -13,7 +13,8 @@ module.exports = {
     //列出第三方库
     vendor: [
       'react',
-      'react-dom'
+      'react-dom',
+      'jquery',
     ]
   },
   output: {
