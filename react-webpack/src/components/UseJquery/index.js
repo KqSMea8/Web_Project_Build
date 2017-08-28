@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
+import $ from 'jquery'
 
 class UseJquery extends Component {
   constructor(props){
     super(props)
+  }
+
+  componentDidMount() {
+    this.el = $(this.el);
+    console.log(this.el)
   }
 
   render() {
