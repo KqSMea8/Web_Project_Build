@@ -19,7 +19,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/dist/',
+    publicPath: '/',
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].chunk.[chunkhash].js'
   },
@@ -62,23 +62,23 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist'],{
-      root: __dirname,
+      root: path.resolve(__dirname,'../'),
     }),
     new ExtractTextPlugin({
-      filename: '../dist/styles.[contenthash].css',
+      filename: 'styles.[contenthash].css',
       allChunks: true,
     }),
-    new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
       title: 'React App',
-      template: 'src/index.html',
+      template: path.resolve(__dirname,'../template/index.template.html'),
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: true,
       warnings: false,
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-    })
+      name: ['vendor', 'runtime'],
+    }),
+    new webpack.HashedModuleIdsPlugin(),
   ]
 }
