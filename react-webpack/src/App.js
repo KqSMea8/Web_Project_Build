@@ -7,12 +7,13 @@ import './styles.css'
 import UseJquery from './components/UseJquery'
 import Button from './components/Button'
 import Input from './components/Input'
+import StyleComponent from './components/StyleComponent'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      number:1,
+      number: 1,
     }
   }
 
@@ -27,29 +28,29 @@ class App extends Component {
           <div className="react-number">React : {this.state.number}</div>
           <button
             className="react-button"
-            onClick={()=>this.setState({number:this.state.number+1})}
+            onClick={() => this.setState({ number: this.state.number + 1 })}
           >reactButton</button>
-          <UseJquery
-            didMount={(el)=>{
-              $('.jquery-button').on('click',()=>{
-                const jqueryNumberNode = el.children('.jquery-number')
-                let number = Number(jqueryNumberNode.text()) + 1
-                console.log(number)
-                jqueryNumberNode.text(number)
-              })
-            }}
-            willUnmount={()=>{
-              console.log('destroy')
-            }}
+        </div>
+        <UseJquery
+          didMount={(el) => {
+            $('.jquery-button').on('click', () => {
+              const jqueryNumberNode = el.children('.jquery-number')
+              let number = Number(jqueryNumberNode.text()) + 1
+              console.log(number)
+              jqueryNumberNode.text(number)
+            })
+          }}
+          willUnmount={() => {
+            console.log('destroy')
+          }}
         >
           <div className="jquery-button-section">
             <div className="jquery-number">1</div>
             <button className="jquery-button">jqueryButton</button>
           </div>
         </UseJquery>
-        </div>
-
         
+        <StyleComponent />
       </div>
     )
   }
