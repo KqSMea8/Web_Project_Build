@@ -14,7 +14,7 @@ class App extends Component {
     super()
     this.state = {
       number: 1,
-      test:'222'
+      test:'2'
     }
   }
 

@@ -61,7 +61,9 @@ module.exports = {
     children: false
   },
   plugins: [
-    new CleanWebpackPlugin('dist'),
+    new CleanWebpackPlugin(['dist'],{
+      root: __dirname,
+    }),
     new ExtractTextPlugin({
       filename: '../dist/styles.[contenthash].css',
       allChunks: true,
