@@ -8,8 +8,13 @@ class UseJquery extends Component {
   }
 
   componentDidMount() {
-    this.el = $(this.el);
-    console.log(this.el)
+    this.jqueryNode = $(this.el).children()
+    this.props.didMount(this.jqueryNode)
+    console.log(this.jqueryNode)
+  }
+
+  componentWillUnmount() {
+    this.props.willUnmount()
   }
 
   render() {
