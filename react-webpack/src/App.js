@@ -37,7 +37,6 @@ class App extends Component {
             $('.jquery-button').on('click', () => {
               const jqueryNumberNode = el.children('.jquery-number')
               let number = Number(jqueryNumberNode.text()) + 1
-              console.log(number)
               jqueryNumberNode.text(number)
             })
           }}
