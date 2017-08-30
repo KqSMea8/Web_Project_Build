@@ -73,8 +73,9 @@ module.exports = {
       template: path.resolve(__dirname,'../template/index.template.html'),
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compress: true,
-      warnings: false,
+      compress: {
+        warnings: true
+      },
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendor', 'runtime'],
