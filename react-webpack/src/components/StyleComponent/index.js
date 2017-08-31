@@ -5,7 +5,6 @@ import styled from 'styled-components'
 const Container = styled.div`
   width:100%;
   height:20px;
-  background:red;
 `
 
 class StyleComponent extends Component {
@@ -17,7 +16,7 @@ class StyleComponent extends Component {
       <Container
         onClick={()=>alert('click')}
       >
-        123
+        testStyleComponent
       </Container>
     )
   }
