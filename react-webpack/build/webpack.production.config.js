@@ -11,11 +11,11 @@ module.exports = {
       './src/main.js'
     ],
     //列出第三方库
-    vendor: [
-      'react',
-      'react-dom',
-      'jquery',
-    ]
+    // vendor: [
+    //   'react',
+    //   'react-dom',
+    //   'jquery',
+    // ]
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -60,26 +60,37 @@ module.exports = {
     chunks: false,
     children: false
   },
+  // webpack 4
+  mode: 'production',
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    },
+    runtimeChunk: true
+  },
+  performance: {
+    hints: false
+  },
   plugins: [
     new CleanWebpackPlugin(['dist'],{
       root: path.resolve(__dirname,'../'),
     }),
     new ExtractTextPlugin({
-      filename: 'styles.[contenthash].css',
+      filename: 'styles.[md5:contenthash:hex:20].css',
       allChunks: true,
     }),
     new HtmlWebpackPlugin({
       title: 'React App',
       template: path.resolve(__dirname,'../template/index.template.html'),
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: true
-      },
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor', 'runtime'],
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: true
+    //   },
+    // }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: ['vendor', 'runtime'],
+    // }),
     new webpack.HashedModuleIdsPlugin(),
   ]
 }

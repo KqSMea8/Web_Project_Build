@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
+import { hot } from 'react-hot-loader'
 import $ from 'jquery'
 
 import './styles.css'
@@ -56,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default hot(module)(App)

@@ -10,12 +10,12 @@ module.exports = {
       'babel-polyfill',
       './src/main.js'
     ],
-    //列出第三方库
-    vendor: [
-      'react',
-      'react-dom',
-      'jquery',
-    ]
+    // //列出第三方库
+    // vendor: [
+    //   'react',
+    //   'react-dom',
+    //   'jquery',
+    // ]
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -52,9 +52,12 @@ module.exports = {
     chunks: false,
     children: false
   },
+  // devtool: 'source-map',
   plugins: [
     new DashboardPlugin(dashboard.setData),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
-  ]
+    // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
+  ],
+  // webpack 4
+  mode: 'development'
 }

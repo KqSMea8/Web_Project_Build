@@ -49,6 +49,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 .tern-project
+dist/
 
 # PHP Middleware
 api/config/scm_config.php
