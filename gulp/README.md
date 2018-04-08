@@ -4,7 +4,7 @@ Use gulp only to build a web project.
 
 ## Directory Layout
 
-```c
+```sh
 -------------------project
 |   |
 |   |--------------dist (The folder to generate packaging)

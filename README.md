@@ -7,16 +7,18 @@ The construction of each folder can be used alone.
 
 [gulp](https://github.com/MrZhang123/Web_Project_Build/blob/master/gulp/README.md)
 
+[react-webpack](https://github.com/MrZhang123/Web_Project_Build/blob/master/react-webpack/README.md)
+
 ## Install
 
-```c
-$ npm install
+```sh
+$ yarn
 ```
 
 ## Usage
 
 ```c
-$ npm run dev
+$ yarn dev
 
-$ npm run build
+$ yarn build
 ```
