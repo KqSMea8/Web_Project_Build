@@ -22,10 +22,12 @@ class App extends Component {
   render() {
     return (
       <div className="test">
-        {/* <Button/>
+        <Button
+          size='large'
+        />
         <Input
           type = 'date'
-        /> */}
+        />
         <div className="react-button-section">
           <div className="react-number">React : {this.state.number}</div>
           <button

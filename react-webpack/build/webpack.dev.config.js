@@ -36,7 +36,17 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            // 开启css modules
+            options: {
+              modules: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]'
+            }
+          }
+        ]
       },
       {
         test: /\.(png|jpg|gif|svg)$/,

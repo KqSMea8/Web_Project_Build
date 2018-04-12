@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import './index.css'
+import styles from './index.css'
 
 class Button extends Component {
   constructor(props) {
@@ -8,18 +8,18 @@ class Button extends Component {
   }
   render() {
     const { size, buttonFont } = this.props
-    let buttonClass = 'button'
+    let buttonClass = ''
     switch (size) {
       case 'large':
-        buttonClass += ' large'
+        buttonClass = styles.large
         break
 
       case 'small':
-        buttonClass += ' small'
+        buttonClass = styles.small
         break
 
       default:
-        buttonClass += ' normall'
+        buttonClass = styles.normall
         break
     }
     return (
