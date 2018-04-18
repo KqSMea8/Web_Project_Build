@@ -8,6 +8,7 @@ class Button extends Component {
   }
   render() {
     const { size, buttonFont } = this.props
+    console.log(styles)
     let buttonClass = ''
     switch (size) {
       case 'large':
