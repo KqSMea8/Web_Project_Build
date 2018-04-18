@@ -1,21 +1,12 @@
 const path = require('path')
 const webpack = require('webpack')
-const Dashboard = require('webpack-dashboard')
-const DashboardPlugin = require('webpack-dashboard/plugin')
-const dashboard = new Dashboard()
 
 module.exports = {
   entry: {
     main: [
       'babel-polyfill',
       './src/main.js'
-    ],
-    // //列出第三方库
-    // vendor: [
-    //   'react',
-    //   'react-dom',
-    //   'jquery',
-    // ]
+    ]
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -62,12 +53,8 @@ module.exports = {
     chunks: false,
     children: false
   },
-  // devtool: 'source-map',
   plugins: [
-    new DashboardPlugin(dashboard.setData),
     new webpack.HotModuleReplacementPlugin(),
-    // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
   ],
-  // webpack 4
   mode: 'development'
 }

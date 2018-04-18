@@ -9,6 +9,7 @@ import UseJquery from './components/UseJquery'
 import Button from './components/Button'
 import Input from './components/Input'
 import StyleComponent from './components/StyleComponent'
+import Demo from './views/Demo'
 
 class App extends Component {
   constructor() {
@@ -54,6 +55,7 @@ class App extends Component {
         </UseJquery>
         
         <StyleComponent />
+        <Demo/>
       </div>
     )
   }

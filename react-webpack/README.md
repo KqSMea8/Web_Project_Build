@@ -50,5 +50,5 @@ open `http://localhost:4200/src/` show your app
 
 ## Feature
 
-- [ ] Add redux
+- [x] Add redux
 - [ ] Add react-router

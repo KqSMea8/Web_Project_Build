@@ -1,5 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+
+import reducers from './reducers'
 import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('app'))
+export const store = createStore(reducers)
+
+ReactDOM.render((
+  <Provider store={store}>
+    <App />
+  </Provider>
+), document.getElementById('app'))

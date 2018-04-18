@@ -9,13 +9,7 @@ module.exports = {
     main: [
       'babel-polyfill',
       './src/main.js'
-    ],
-    //列出第三方库
-    // vendor: [
-    //   'react',
-    //   'react-dom',
-    //   'jquery',
-    // ]
+    ]
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -85,14 +79,6 @@ module.exports = {
       title: 'React App',
       template: path.resolve(__dirname,'../template/index.template.html'),
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: true
-    //   },
-    // }),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: ['vendor', 'runtime'],
-    // }),
     new webpack.HashedModuleIdsPlugin(),
   ]
 }
