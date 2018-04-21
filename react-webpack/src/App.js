@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { render } from 'react-dom'
 import { hot } from 'react-hot-loader'
 import $ from 'jquery'
 
@@ -9,30 +8,32 @@ import UseJquery from './components/UseJquery'
 import Button from './components/Button'
 import Input from './components/Input'
 import StyleComponent from './components/StyleComponent'
-import Demo from './views/Demo'
+
+import RouterLink from './views/RouterLink'
+// import Content from './views/Content'
 
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       number: 1,
-      test:'22'
+      test: '22'
     }
   }
 
-  render() {
+  render () {
     return (
-      <div className="test">
+      <div className='test'>
         <Button
           size='large'
         />
         <Input
-          type = 'date'
+          type='date'
         />
-        <div className="react-button-section">
-          <div className="react-number">React : {this.state.number}</div>
+        <div className='react-button-section'>
+          <div className='react-number'>React : {this.state.number}</div>
           <button
-            className="react-button"
+            className='react-button'
             onClick={() => this.setState({ number: this.state.number + 1 })}
           >reactButton</button>
         </div>
@@ -45,17 +46,19 @@ class App extends Component {
             })
           }}
           willUnmount={() => {
-            console.log('destroy')
+            console.log('destroy2')
           }}
         >
-          <div className="jquery-button-section">
-            <div className="jquery-number">1</div>
-            <button className="jquery-button">jqueryButton</button>
+          <div className='jquery-button-section'>
+            <div className='jquery-number'>1</div>
+            <button className='jquery-button'>jqueryButton</button>
           </div>
         </UseJquery>
-        
         <StyleComponent />
-        <Demo/>
+        <h4>路由测试</h4>
+        <div>
+          <RouterLink />
+        </div>
       </div>
     )
   }

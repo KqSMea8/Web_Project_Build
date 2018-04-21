@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { render } from 'react-dom'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -8,13 +7,10 @@ const Container = styled.div`
 `
 
 class StyleComponent extends Component {
-  constructor(props){
-    super(props)
-  }
-  render() {
+  render () {
     return (
       <Container
-        onClick={()=>alert('click')}
+        onClick={() => console.log('click')}
       >
         testStyleComponent
       </Container>

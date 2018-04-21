@@ -1,60 +1,31 @@
-const path = require('path')
 const webpack = require('webpack')
+const config = require('./webpack.base.config.js')
+const WebpackDevServer = require('webpack-dev-server')
+const PROT = process.env.PROT || 8000
 
-module.exports = {
-  entry: {
-    main: [
-      'babel-polyfill',
-      './src/main.js'
-    ]
-  },
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: '[name].js',
-    chunkFilename: '[name].chunk.js'
-  },
-  resolve: {
-    modules: ['node_modules'],
-    extensions: ['.web.js', '.js', '.jsx', '.json']
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            // 开启css modules
-            options: {
-              modules: true,
-              localIdentName: '[path][name]__[local]--[hash:base64:5]'
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: '[name].[ext]?[hash]'
-        }
-      },
-    ]
-  },
+config.entry.main = (config.entry.main || []).concat([
+  'react-hot-loader/patch',
+  `webpack-dev-server/client?http://localhost:${PROT}/`,
+  'webpack/hot/dev-server'
+])
+config.plugins = (config.plugins || []).concat([
+  new webpack.HotModuleReplacementPlugin()
+])
+config.mode = 'development'
+
+const compiler = webpack(config)
+
+const server = new WebpackDevServer(compiler, {
+  hot: true,
+  noInfo: true,
+  quiet: true,
+  filename: config.output.filename,
+  publicPath: config.output.publicPath,
   stats: {
-    chunks: false,
-    children: false
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
-  mode: 'development'
-}
+    colors: true
+  }
+})
+
+server.listen(PROT, 'localhost', () => {
+  console.log(`server started at localhost:${PROT}`)
+})

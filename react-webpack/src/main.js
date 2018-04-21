@@ -1,15 +1,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
+// import {
+//   hashHistory as Router,
+//   Route,
+//   Link
+// } from 'react-router-dom'
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
 
 import reducers from './reducers'
 import App from './App'
 
-export const store = createStore(reducers)
+const history = createHistory()
+const middleware = routerMiddleware(history)
+
+export const store = createStore(
+  reducers,
+  applyMiddleware(thunk, middleware)
+)
 
 ReactDOM.render((
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>
 ), document.getElementById('app'))

@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
-import { render } from 'react-dom'
 import styles from './index.css'
 
 class Button extends Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
+  render () {
     const { size, buttonFont } = this.props
-    console.log(styles)
     let buttonClass = ''
     switch (size) {
       case 'large':
@@ -24,7 +19,7 @@ class Button extends Component {
         break
     }
     return (
-      <button className={buttonClass}>{buttonFont ? buttonFont : '确定'}</button>
+      <button className={buttonClass}>{buttonFont || '确定'}</button>
     )
   }
 }
