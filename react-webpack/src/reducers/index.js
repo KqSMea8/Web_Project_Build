@@ -4,6 +4,6 @@ import { routerReducer } from 'react-router-redux'
 import demo from './demo'
 
 export default combineReducers({
-  router: routerReducer,
+  routing: routerReducer,
   demo
 })

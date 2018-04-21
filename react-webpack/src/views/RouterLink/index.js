@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
+  BrowserRouter as Router,
   Link
 } from 'react-router-dom'
 // import {
@@ -22,16 +23,17 @@ const routes = [
 class RouterLink extends Component {
   render () {
     return (
-      <div>
-        <div>Redux测试：{this.props.demoData}</div>
-        <ul>
-          <li><Link to='/'>首页</Link></li>
-          <li><Link to='/about'>关于</Link></li>
-          <li><Link to='/topics'>主题列表</Link></li>
-        </ul>
-        {renderRoutes(routes)}
-        <div>this is test</div>
-      </div>
+      <Router>
+        <div>
+          <div>Redux测试：{this.props.demoData}</div>
+          <ul>
+            <li><Link to='/'>首页</Link></li>
+            <li><Link to='/about'>关于</Link></li>
+            <li><Link to='/topics'>主题列表</Link></li>
+          </ul>
+          {renderRoutes(routes)}
+        </div>
+      </Router>
     )
   }
 }

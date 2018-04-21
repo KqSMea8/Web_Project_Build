@@ -3,11 +3,6 @@ import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
-// import {
-//   hashHistory as Router,
-//   Route,
-//   Link
-// } from 'react-router-dom'
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 
