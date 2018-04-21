@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router, // HashRouter / BrowserRouter
   Link
 } from 'react-router-dom'
 // import {
