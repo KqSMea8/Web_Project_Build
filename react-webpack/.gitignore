@@ -51,5 +51,10 @@ fastlane/screenshots
 .tern-project
 dist/
 
+# editor
+
+.idea/
+.vscode/
+
 # PHP Middleware
 api/config/scm_config.php
