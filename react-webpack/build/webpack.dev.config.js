@@ -20,7 +20,7 @@ const server = new WebpackDevServer(compiler, {
   noInfo: true,
   quiet: true,
   filename: config.output.filename,
-  publicPath: config.output.publicPath,
+  publicPath: '/',
   stats: {
     colors: true
   }
