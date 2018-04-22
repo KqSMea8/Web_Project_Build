@@ -11,9 +11,9 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/',
+    // publicPath: '/',
     filename: '[name].js',
-    chunkFilename: '[name].js'
+    chunkFilename: '[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -53,16 +53,14 @@ module.exports = {
   mode: '',
   plugins: [
     new ExtractTextPlugin({
-      filename: 'styles.[md5:contenthash:hex:20].css',
+      filename: 'style.[chunkhash].css',
       allChunks: true
     }),
     new HtmlWebpackPlugin({
       title: 'React App',
       template: path.resolve(__dirname, '../src/index.html'),
-      inject: true,
-      hash: true,
-      cache: true,
-      chunks: ['main', 'vendors']
+      // inject: true,
+      cache: true
     })
   ]
 }

@@ -19,9 +19,13 @@ const config = require('./webpack.base.config')
 config.mode = 'production'
 config.optimization = {
   splitChunks: {
-    chunks: 'all'
+    chunks: 'all',
+    name: 'common'
   },
-  runtimeChunk: true
+  minimize: true,
+  runtimeChunk: {
+    name: 'runtime'
+  }
 }
 config.performance = {
   hints: false
