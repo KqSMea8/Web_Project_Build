@@ -49,17 +49,30 @@ Use webpack build react
 └── yarn.lock
 ```
 
-## Intro
+## Introduction
 
-use latest webpack@v4 build SPA react app
+React SPA Project build, it use webpack v4, react-router v4 and redux . use webpack webpack-dev-server and react hot reload realize hot reload in development and code splitting in production
+
+## Use
 
 ```sh
+$ yarn
+# open development
 $ yarn dev
+# build
+$ yarn build
 ```
 
-open `http://localhost:4200/src/` show your app
+open `http://localhost:4200` show your app
+
+> note: you can change PORT in package.json `"dev": "cross-env NODE_ENV=development PORT=4200 node build/webpack.dev.config.js"`
 
 ## Feature
 
 - [x] Add redux
 - [x] Add react-router
+- [ ] Add open browser default
+- [ ] Separation hot reload from production (dev and production all have hot reload now)
+- [ ] Add chunksName after code splitting (default name is 0, 1 ,2 ...)
+- [ ] Use plugin optimizing webpack
+
