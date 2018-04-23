@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node_modules/.bin/standard",
     "fix": "node_modules/.bin/standard --fix",
-    "dev": "cross-env NODE_ENV=development PROT=4200 node build/webpack.dev.config.js",
+    "dev": "cross-env NODE_ENV=development PORT=4200 node build/webpack.dev.config.js",
     "build": "cross-env NODE_ENV=production node_modules/.bin/webpack --progress --colors --config ./build/webpack.production.config.js",
     "precommit": "lint-staged"
   },

@@ -1,11 +1,11 @@
 const webpack = require('webpack')
 const config = require('./webpack.base.config.js')
 const WebpackDevServer = require('webpack-dev-server')
-const PROT = process.env.PROT || 8000
+const PORT = process.env.PORT || 8000
 
 config.entry.main = (config.entry.main || []).concat([
   'react-hot-loader/patch',
-  `webpack-dev-server/client?http://localhost:${PROT}/`,
+  `webpack-dev-server/client?http://localhost:${PORT}/`,
   'webpack/hot/dev-server'
 ])
 config.plugins = (config.plugins || []).concat([
@@ -26,6 +26,6 @@ const server = new WebpackDevServer(compiler, {
   }
 })
 
-server.listen(PROT, 'localhost', () => {
-  console.log(`server started at localhost:${PROT}`)
+server.listen(PORT, 'localhost', () => {
+  console.log(`server started at localhost:${PORT}`)
 })
