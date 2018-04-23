@@ -3,23 +3,11 @@ const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const config = require('./webpack.base.config')
 
-/**
-  mode: 'production',
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    },
-    runtimeChunk: true
-  },
-  performance: {
-    hints: false
-  },
- */
-
 config.mode = 'production'
 config.optimization = {
   splitChunks: {
     chunks: 'all',
+    // minChunks: 1, // what means about minChunks ?
     name: 'common'
   },
   minimize: true,
