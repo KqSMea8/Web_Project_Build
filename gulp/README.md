@@ -32,7 +32,7 @@ Use gulp only to build a web project.
 |   |--------------package.json
 ```
 
-## Intro
+## Introduction
 
 the `gulpfile-dev.js` use in the development , it contains features :
 

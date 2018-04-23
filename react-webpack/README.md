@@ -1,6 +1,6 @@
 # Build React
 
-Use webpack build react
+Use webpack v4 build react
 
 ## Directory Layout
 
@@ -75,4 +75,5 @@ open `http://localhost:4200` show your app
 - [ ] Separation hot reload from production (dev and production all have hot reload now)
 - [ ] Add chunksName after code splitting (default name is 0, 1 ,2 ...)
 - [ ] Use plugin optimizing webpack
+- [ ] add sass and postCSS
 
