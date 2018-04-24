@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const config = require('./webpack.base.config')
 
 config.mode = 'production'
@@ -19,9 +20,30 @@ config.performance = {
   hints: false
 }
 
+config.module.rules = (config.module.rules || []).concat([
+  {
+    test: /\.css$/,
+    use: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          minimize: true,
+          localIdentName: '[path][name]__[local]--[hash:base64:5]'
+        }
+      }
+    })
+  }
+])
+
 config.plugins = (config.plugins || []).concat([
   new CleanWebpackPlugin(['dist'], {
     root: path.resolve(__dirname, '../')
+  }),
+  new ExtractTextPlugin({
+    filename: 'style.[chunkhash].css',
+    allChunks: true
   }),
   new webpack.HashedModuleIdsPlugin()
 ])

@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -23,20 +22,6 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              minimize: true,
-              localIdentName: '[path][name]__[local]--[hash:base64:5]'
-            }
-          }
-        })
-      },
-      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'url-loader',
         options: {
@@ -52,10 +37,6 @@ module.exports = {
   },
   mode: '',
   plugins: [
-    new ExtractTextPlugin({
-      filename: 'style.[chunkhash].css',
-      allChunks: true
-    }),
     new HtmlWebpackPlugin({
       title: 'React App',
       template: path.resolve(__dirname, '../src/index.html'),
