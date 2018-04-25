@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { hot } from 'react-hot-loader'
 import $ from 'jquery'
 
-import './styles.css'
+import './styles.scss'
 
 import UseJquery from './components/UseJquery'
 import Button from './components/Button'
