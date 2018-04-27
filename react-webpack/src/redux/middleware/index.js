@@ -5,7 +5,7 @@ import createHistory from 'history/createBrowserHistory'
 export const history = createHistory()
 const roterHistory = routerMiddleware(history)
 
-export default {
+export default [
   thunk,
   roterHistory
-}
+]

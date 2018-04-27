@@ -4,10 +4,11 @@ import {
   HashRouter as Router, // HashRouter / BrowserRouter
   Link
 } from 'react-router-dom'
-// import {
-//   setDemoData
-// } from '../../actions/demo'
+import {
+  setDemoData
+} from '../../redux/actions/demo'
 import { renderRoutes } from 'react-router-config'
+import { store } from '../../main'
 
 import ContnetRouter from '../Content/router'
 
@@ -25,7 +26,12 @@ class RouterLink extends Component {
     return (
       <Router>
         <div>
-          <div>Redux测试：{this.props.demoData}</div>
+          <button onClick={() => store.dispatch(setDemoData())}>change the value</button>
+          {
+            this.props.demoData.map((item) => {
+              return <div key={item.id}>{item.name}</div>
+            })
+          }
           <ul>
             <li><Link to='/'>首页</Link></li>
             <li><Link to='/about'>关于</Link></li>

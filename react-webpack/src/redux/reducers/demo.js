@@ -3,7 +3,7 @@ import {
 } from '../actions/demo'
 
 const initState = {
-  demoData: 'This is default DemoData'
+  demoData: []
 }
 
 export default (state = initState, action) => {
