@@ -13,6 +13,7 @@ import { store } from '../../main'
 import ContnetRouter from '../Content/router'
 
 const mapStateToProps = state => ({
+
   demoData: state.demo.demoData
 })
 
