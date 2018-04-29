@@ -8,7 +8,7 @@ import {
   setDemoData
 } from '../../redux/actions/demo'
 import { renderRoutes } from 'react-router-config'
-import { store } from '../../main'
+import store from '../../redux/store'
 
 import ContnetRouter from '../Content/router'
 

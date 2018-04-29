@@ -6,12 +6,10 @@ import { ConnectedRouter } from 'react-router-redux'
 import { AppContainer } from 'react-hot-loader'
 
 import App from './App'
-import configureStore from './redux/configureStore'
+import store from './redux/store'
 import { history } from './redux/middleware'
 
-export const store = configureStore()
-
-// ReactDOM.render((
+// render((
 //   <Provider store={store}>
 //     <ConnectedRouter history={history}>
 //       <App />
@@ -33,16 +31,9 @@ render(
 // Hot Module Replacement API
 if (module.hot) {
   module.hot.accept(App, () => {
-    const NextApp = App.default
-    render(
-      <AppContainer>
-        <Provider store={store}>
-          <ConnectedRouter history={history}>
-            <NextApp />
-          </ConnectedRouter>
-        </Provider>
-      </AppContainer>,
-      document.getElementById('app')
-    )
+    // if you are using harmony modules ({modules:false})
+    render(App)
+    // in all other cases - re-require App manually
+    // render(require('./containers/App'))
   })
 }
