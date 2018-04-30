@@ -4,7 +4,7 @@ const WebpackDevServer = require('webpack-dev-server')
 const PORT = process.env.PORT || 8000
 
 config.entry.main = (config.entry.main || []).concat([
-  'react-hot-loader/patch',
+  // 'react-hot-loader/patch', // Code is automatically patched in v4
   `webpack-dev-server/client?http://localhost:${PORT}/`,
   'webpack/hot/dev-server'
 ])

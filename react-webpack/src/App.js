@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { hot } from 'react-hot-loader'
+import { hot } from 'react-hot-loader'
 import './styles.scss'
 
 import Button from './components/Button'
@@ -43,4 +43,5 @@ class App extends Component {
   }
 }
 
-export default App
+// export default App
+export default hot(module)(App)
