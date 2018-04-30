@@ -22,6 +22,23 @@ config.performance = {
 
 config.module.rules = (config.module.rules || []).concat([
   {
+    test: /\.css$/,
+    use: ExtractTextPlugin.extract({
+      use: [
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            minimize: true,
+            localIdentName: '[path][name]__[local]--[hash:base64:5]'
+          }
+        },
+        'postcss-loader'
+      ],
+      fallback: 'style-loader'
+    })
+  },
+  {
     test: /\.scss$/,
     use: ExtractTextPlugin.extract({
       use: [

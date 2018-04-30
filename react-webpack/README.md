@@ -72,9 +72,8 @@ open `http://localhost:4200` show your app
 - [x] Add redux
 - [x] Add react-router
 - [x] Add sass and postCSS
-- [ ] Redux hot reload not work
+- [ ] react-hot-loader not work in react-routerv4
 - [ ] Add open browser default
 - [ ] Separation hot reload from production (dev and production all have hot reload now)
 - [ ] Add chunksName after code splitting (default name is 0, 1 ,2 ...)
 - [ ] Use plugin optimizing webpack
-

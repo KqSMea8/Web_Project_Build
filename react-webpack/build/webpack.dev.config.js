@@ -12,6 +12,25 @@ config.entry.main = (config.entry.main || []).concat([
 // separate css-loader and style-loader in dev and production because dev // need hot reload but extract-text-webpack-plugin not support hot reload
 config.module.rules = (config.module.rules || []).concat([
   {
+    test: /\.css$/,
+    use: [
+      {
+        loader: 'style-loader'
+      },
+      {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          minimize: true,
+          localIdentName: '[path][name]__[local]--[hash:base64:5]'
+        }
+      },
+      {
+        loader: 'postcss-loader'
+      }
+    ]
+  },
+  {
     test: /\.scss$/,
     // use: ['style-loader', 'css-loader', 'sass-loader']
     use: [
