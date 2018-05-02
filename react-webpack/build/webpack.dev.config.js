@@ -68,7 +68,7 @@ const server = new WebpackDevServer(compiler, {
   quiet: true,
   historyApiFallback: true,
   filename: config.output.filename,
-  publicPath: '/',
+  publicPath: config.output.publicPath,
   stats: {
     colors: true
   }

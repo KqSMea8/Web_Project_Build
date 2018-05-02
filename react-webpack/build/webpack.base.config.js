@@ -40,6 +40,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'React App',
       template: path.resolve(__dirname, '../src/index.html'),
+      // minify: true,
       // inject: true,
       cache: true
     })
