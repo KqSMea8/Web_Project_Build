@@ -4,17 +4,21 @@
 // const About = asyncComponent(() => import('./About'))
 // const Topics = asyncComponent(() => import('./Topics'))
 
-import loadable from 'loadable-components'
+// import loadable from 'loadable-components'
+import loadable from 'react-loadable'
 import Loading from '../../components/Loading'
 
-export const Home = loadable(() => import('./Home'), {
-  LoadingComponent: Loading
+export const Home = loadable({
+  loader: () => import('./Home'),
+  loading: Loading
 })
-export const About = loadable(() => import('./About'), {
-  LoadingComponent: Loading
+export const About = loadable({
+  loader: () => import('./About'),
+  loading: Loading
 })
-export const Topics = loadable(() => import('./Topics'), {
-  LoadingComponent: Loading
+export const Topics = loadable({
+  loader: () => import('./Topics'),
+  loading: Loading
 })
 
 const routes = [
