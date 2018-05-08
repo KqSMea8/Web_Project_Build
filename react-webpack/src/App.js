@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { hot } from 'react-hot-loader'
 
+import './static/css/normalize.css'
 import './styles.scss'
 import Button from './components/Button'
 import Input from './components/Input'
