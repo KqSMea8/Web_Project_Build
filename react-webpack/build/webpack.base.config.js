@@ -1,5 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Stylish = require('webpack-stylish')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const ASSET_PATH = process.env.ASSET_PATH || '/'
 
@@ -45,6 +47,8 @@ module.exports = {
       // minify: true,
       // inject: true,
       cache: true
-    })
+    }),
+    new Stylish(),
+    new BundleAnalyzerPlugin()
   ]
 }

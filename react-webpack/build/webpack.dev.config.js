@@ -64,7 +64,7 @@ const compiler = webpack(config)
 
 const server = new WebpackDevServer(compiler, {
   hot: true,
-  noInfo: true,
+  // noInfo: true,
   quiet: true,
   historyApiFallback: true,
   filename: config.output.filename,
