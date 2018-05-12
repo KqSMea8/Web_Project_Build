@@ -7,45 +7,43 @@ Use webpack v4 build react
 ```sh
 ├── README.md
 ├── build
-│   ├── webpack.base.config.js
-│   ├── webpack.dev.config.js
-│   └── webpack.production.config.js
+│   ├── webpack.base.config.js
+│   ├── webpack.dev.config.js
+│   └── webpack.production.config.js
 ├── package.json
+├── postcss.config.js
 ├── src
-│   ├── App.js
-│   ├── actions
-│   │   └── demo.js
-│   ├── commons
-│   │   └── AsyncComponent.js
-│   ├── components
-│   │   ├── Button
-│   │   │   ├── index.css
-│   │   │   └── index.js
-│   │   ├── Input
-│   │   │   ├── index.js
-│   │   │   └── style.css
-│   │   ├── StyleComponent
-│   │   │   └── index.js
-│   │   └── UseJquery
-│   │       └── index.js
-│   ├── index.html
-│   ├── main.js
-│   ├── reducers
-│   │   ├── demo.js
-│   │   └── index.js
-│   ├── route
-│   ├── styles.css
-│   └── views
-│       ├── Content
-│       │   ├── About
-│       │   │   └── index.js
-│       │   ├── Home
-│       │   │   └── index.js
-│       │   ├── Topics
-│       │   │   └── index.js
-│       │   └── router.js
-│       └── RouterLink
-│           └── index.js
+│   ├── App.js
+│   ├── components
+│   │   └── Loading
+│   │       └── index.js
+│   ├── index.html
+│   ├── main.js
+│   ├── redux
+│   │   ├── actions
+│   │   │   └── demo.js
+│   │   ├── middleware
+│   │   │   └── index.js
+│   │   ├── reducers
+│   │   │   ├── demo.js
+│   │   │   └── index.js
+│   │   └── store
+│   │       └── index.js
+│   ├── static
+│   │   └── css
+│   │       └── normalize.css
+│   ├── styles.scss
+│   └── views
+│       ├── Content
+│       │   ├── About
+│       │   │   └── index.js
+│       │   ├── Home
+│       │   │   └── index.js
+│       │   ├── Topics
+│       │   │   └── index.js
+│       │   └── router.js
+│       └── RouterLink
+│           └── index.js
 └── yarn.lock
 ```
 
