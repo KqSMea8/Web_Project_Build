@@ -1,16 +1,14 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Stylish = require('webpack-stylish')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
+const debug = process.env.NODE_ENV === 'development'
 const ASSET_PATH = process.env.ASSET_PATH || '/'
 
 module.exports = {
   entry: {
-    main: [
-      'babel-polyfill',
-      path.resolve(__dirname, '../src/main.js')
-    ]
+    main: ['babel-polyfill', path.resolve(__dirname, '../src/main.js')]
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -44,11 +42,19 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'React App',
       template: path.resolve(__dirname, '../src/index.html'),
-      // minify: true,
-      // inject: true,
+      minify: debug
+        ? false
+        : {
+          removeAttributeQuotes: true,
+          collapseWhitespace: true,
+          html5: true,
+          minifyCSS: true,
+          removeComments: true,
+          removeEmptyAttributes: true
+        },
       cache: true
     }),
-    new Stylish(),
-    new BundleAnalyzerPlugin()
+    new Stylish()
+    // new BundleAnalyzerPlugin()
   ]
 }

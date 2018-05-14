@@ -13,7 +13,6 @@ import store from '../../redux/store'
 import ContnetRouter from '../Content/router'
 
 const mapStateToProps = state => ({
-
   demoData: state.demo.demoData
 })
 

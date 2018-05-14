@@ -38,7 +38,8 @@ config.plugins = (config.plugins || []).concat([
     root: path.resolve(__dirname, '../')
   }),
   new ExtractTextPlugin({
-    filename: 'style.[chunkhash].css',
+    publicPath: '../../',
+    filename: 'style/style.[chunkhash].css',
     allChunks: true
   }),
   new webpack.HashedModuleIdsPlugin()
