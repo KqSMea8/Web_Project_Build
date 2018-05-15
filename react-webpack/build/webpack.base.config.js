@@ -8,7 +8,7 @@ const ASSET_PATH = process.env.ASSET_PATH || '/'
 
 module.exports = {
   entry: {
-    main: ['babel-polyfill', path.resolve(__dirname, '../src/main.js')]
+    main: ['@babel/polyfill', path.resolve(__dirname, '../src/main.js')]
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
