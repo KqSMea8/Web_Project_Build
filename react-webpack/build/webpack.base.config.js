@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Stylish = require('webpack-stylish')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-const debug = process.env.NODE_ENV === 'development'
+const isDebug = process.env.NODE_ENV === 'development'
 const ASSET_PATH = process.env.ASSET_PATH || '/'
 
 module.exports = {
@@ -37,12 +37,12 @@ module.exports = {
     modules: ['node_modules'],
     extensions: ['.web.js', '.js', '.jsx', '.json']
   },
-  mode: '',
+  mode: isDebug ? 'development' : 'production',
   plugins: [
     new HtmlWebpackPlugin({
       title: 'React App',
       template: path.resolve(__dirname, '../src/index.html'),
-      minify: debug
+      minify: isDebug
         ? false
         : {
           removeAttributeQuotes: true,

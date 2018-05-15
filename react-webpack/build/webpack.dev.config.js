@@ -26,7 +26,6 @@ config.module.rules = (config.module.rules || []).concat([
 config.plugins = (config.plugins || []).concat([
   new webpack.HotModuleReplacementPlugin()
 ])
-config.mode = 'development'
 
 const compiler = webpack(config)
 

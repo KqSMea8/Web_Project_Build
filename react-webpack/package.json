@@ -3,18 +3,10 @@
   "version": "1.0.0",
   "description": "react-webpack environment",
   "main": "index.js",
-  "scripts": {
-    "test": "node_modules/.bin/standard",
-    "fix": "node_modules/.bin/standard --fix",
-    "dev": "cross-env NODE_ENV=development PORT=4200 node build/webpack.dev.config.js",
-    "build": "cross-env NODE_ENV=production ASSET_PATH='./' node_modules/.bin/webpack --progress --colors --config ./build/webpack.production.config.js",
-    "build:online": "cross-env NODE_ENV=production ASSET_PATH='http://you_own_cdn_link' node_modules/.bin/webpack --progress --colors --config ./build/webpack.production.config.js",
-    "precommit": "lint-staged"
-  },
   "author": "Mark_Zhang",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.0.0-beta.46",
+    "@babel/polyfill": "^7.0.0-beta.47",
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "history": "^4.7.2",
@@ -29,14 +21,15 @@
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/node": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/node": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "@babel/preset-react": "^7.0.0-beta.47",
+    "@babel/preset-stage-0": "^7.0.0-beta.47",
     "autoprefixer": "^8.5.0",
+    "babel-core": "^7.0.0-beta.47",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
@@ -73,5 +66,13 @@
       "standard --fix",
       "git add"
     ]
+  },
+  "scripts": {
+    "test": "node_modules/.bin/standard",
+    "fix": "node_modules/.bin/standard --fix",
+    "dev": "cross-env NODE_ENV=development PORT=4200 babel-node build/webpack.dev.config.js",
+    "build": "cross-env NODE_ENV=production ASSET_PATH='./' node_modules/.bin/webpack --progress --colors --config ./build/webpack.production.config.js",
+    "build:online": "cross-env NODE_ENV=production ASSET_PATH='http://you_own_cdn_link' node_modules/.bin/webpack --progress --colors --config ./build/webpack.production.config.js",
+    "precommit": "lint-staged"
   }
 }

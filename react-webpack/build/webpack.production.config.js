@@ -4,7 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const config = require('./webpack.base.config')
 
-config.mode = 'production'
 config.optimization = {
   splitChunks: {
     chunks: 'all',
