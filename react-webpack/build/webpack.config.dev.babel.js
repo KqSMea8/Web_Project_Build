@@ -1,5 +1,5 @@
-const webpack = require('webpack')
-const config = require('./webpack.base.config.js')
+import webpack from 'webpack'
+const config = require('./webpack.config.base.babel.js')
 const WebpackDevServer = require('webpack-dev-server')
 const PORT = process.env.PORT || 8000
 

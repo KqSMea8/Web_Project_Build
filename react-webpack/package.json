@@ -70,9 +70,9 @@
   "scripts": {
     "test": "node_modules/.bin/standard",
     "fix": "node_modules/.bin/standard --fix",
-    "dev": "cross-env NODE_ENV=development PORT=4200 babel-node build/webpack.dev.config.js",
-    "build": "cross-env NODE_ENV=production ASSET_PATH='./' node_modules/.bin/webpack --progress --colors --config ./build/webpack.production.config.js",
-    "build:online": "cross-env NODE_ENV=production ASSET_PATH='http://you_own_cdn_link' node_modules/.bin/webpack --progress --colors --config ./build/webpack.production.config.js",
+    "dev": "cross-env NODE_ENV=development PORT=4200 node build/webpack.config.dev.babel.js",
+    "build": "cross-env NODE_ENV=production ASSET_PATH='./' node_modules/.bin/webpack --progress --colors --config ./build/webpack.config.production.babel.js",
+    "build:online": "cross-env NODE_ENV=production ASSET_PATH='http://you_own_cdn_link' node_modules/.bin/webpack --progress --colors --config ./build/webpack.config.production.babel.js",
     "precommit": "lint-staged"
   }
 }

@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const config = require('./webpack.base.config')
+const config = require('./webpack.config.base.babel')
 
 config.optimization = {
   splitChunks: {
