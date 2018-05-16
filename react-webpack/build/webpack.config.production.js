@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const config = require('./webpack.config.base.babel')
 
 config.optimization = {
@@ -22,7 +22,7 @@ config.performance = {
 config.module.rules = (config.module.rules || []).concat([
   {
     test: /\.(css|scss)$/,
-    use: ExtractTextPlugin.extract({
+    use: MiniCssExtractPlugin.extract({
       use: [
         'css-loader',
         'postcss-loader'
@@ -36,7 +36,7 @@ config.plugins = (config.plugins || []).concat([
   new CleanWebpackPlugin(['dist'], {
     root: path.resolve(__dirname, '../')
   }),
-  new ExtractTextPlugin({
+  new MiniCssExtractPlugin({
     publicPath: '../../',
     filename: 'style/style.[chunkhash].css',
     allChunks: true
