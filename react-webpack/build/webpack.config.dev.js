@@ -1,5 +1,6 @@
-import webpack from 'webpack'
-const config = require('./webpack.config.base.babel.js')
+// import webpack from 'webpack'
+const webpack = require('webpack')
+const config = require('./webpack.config.base.js')
 const WebpackDevServer = require('webpack-dev-server')
 const PORT = process.env.PORT || 8000
 
@@ -7,20 +8,6 @@ config.entry.main = (config.entry.main || []).concat([
   // 'react-hot-loader/patch', // Code is automatically patched in v4
   `webpack-dev-server/client?http://localhost:${PORT}/`,
   'webpack/hot/dev-server'
-])
-
-// separate css-loader and style-loader in dev and production because dev // need hot reload but extract-text-webpack-plugin not support hot reload
-config.module.rules = (config.module.rules || []).concat([
-  {
-    test: /\.(css|scss)$/,
-    use: ['style-loader', 'css-loader',
-      {
-        loader: 'postcss-loader',
-        options: {}
-      },
-      'sass-loader'
-    ]
-  }
 ])
 
 config.plugins = (config.plugins || []).concat([
