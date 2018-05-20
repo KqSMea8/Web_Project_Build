@@ -2,10 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const Stylish = require('webpack-stylish')
+const CommonConfig = require('../config')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const devMode = process.env.NODE_ENV === 'development'
-const ASSET_PATH = process.env.ASSET_PATH || '/'
+const ASSET_PATH = CommonConfig.getWebpackpublicPath()
 
 module.exports = {
   entry: {

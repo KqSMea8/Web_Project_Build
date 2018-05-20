@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.47",
-    "@babel/node": "^7.0.0-beta.47",
     "@babel/preset-env": "^7.0.0-beta.47",
     "@babel/preset-react": "^7.0.0-beta.47",
     "@babel/preset-stage-0": "^7.0.0-beta.47",
@@ -40,6 +39,7 @@
     "lint-staged": "^7.1.1",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
+    "opener": "^1.4.3",
     "postcss-loader": "^2.1.5",
     "react-hot-loader": "^4.2.0",
     "react-loadable": "^5.4.0",
@@ -71,8 +71,8 @@
     "test": "node_modules/.bin/standard",
     "fix": "node_modules/.bin/standard --fix",
     "dev": "cross-env NODE_ENV=development PORT=4200 node build/webpack.config.dev.js",
-    "build": "cross-env NODE_ENV=production ASSET_PATH='./' node_modules/.bin/webpack --progress --colors --config ./build/webpack.config.production.js",
-    "build:online": "cross-env NODE_ENV=production ASSET_PATH='http://you_own_cdn_link' node_modules/.bin/webpack --progress --colors --config ./build/webpack.config.production.js",
+    "build": "cross-env NODE_ENV=production node_modules/.bin/webpack --progress --colors --config ./build/webpack.config.production.js",
+    "build:online": "cross-env NODE_ENV=production_online node_modules/.bin/webpack --progress --colors --config ./build/webpack.config.production.js",
     "precommit": "lint-staged"
   }
 }

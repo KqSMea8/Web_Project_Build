@@ -1,7 +1,7 @@
-// import webpack from 'webpack'
 const webpack = require('webpack')
 const config = require('./webpack.config.base.js')
 const WebpackDevServer = require('webpack-dev-server')
+const opener = require('opener')
 const PORT = process.env.PORT || 8000
 
 config.entry.main = (config.entry.main || []).concat([
@@ -30,4 +30,5 @@ const server = new WebpackDevServer(compiler, {
 
 server.listen(PORT, 'localhost', () => {
   console.log(`server started at localhost:${PORT}`)
+  opener(`http://localhost:${PORT}`)
 })
