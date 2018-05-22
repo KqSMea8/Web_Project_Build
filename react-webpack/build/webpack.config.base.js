@@ -1,10 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const Stylish = require('webpack-stylish')
+const CommonConfig = require('../config')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-const isDebug = process.env.NODE_ENV === 'development'
-const ASSET_PATH = process.env.ASSET_PATH || '/'
+const devMode = process.env.NODE_ENV === 'development'
+const ASSET_PATH = CommonConfig.getWebpackpublicPath()
 
 module.exports = {
   entry: {
@@ -24,6 +26,18 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
+        test: /\.(css|scss)$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {}
+          },
+          'sass-loader'
+        ]
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'url-loader',
         options: {
@@ -37,12 +51,12 @@ module.exports = {
     modules: ['node_modules'],
     extensions: ['.web.js', '.js', '.jsx', '.json']
   },
-  mode: isDebug ? 'development' : 'production',
+  mode: devMode ? 'development' : 'production',
   plugins: [
     new HtmlWebpackPlugin({
       title: 'React App',
       template: path.resolve(__dirname, '../src/index.html'),
-      minify: isDebug
+      minify: devMode
         ? false
         : {
           removeAttributeQuotes: true,
@@ -53,6 +67,12 @@ module.exports = {
           removeEmptyAttributes: true
         },
       cache: true
+    }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: devMode ? '[name].css' : 'style/[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : 'style/[id].[hash].css'
     }),
     new Stylish()
     // new BundleAnalyzerPlugin()
