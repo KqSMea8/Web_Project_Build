@@ -68,7 +68,7 @@
     ]
   },
   "scripts": {
-    "test": "node_modules/.bin/standard",
+    "linc": "node_modules/.bin/standard",
     "fix": "node_modules/.bin/standard --fix",
     "dev": "cross-env NODE_ENV=development PORT=4200 node build/webpack.config.dev.babel.js",
     "build": "cross-env NODE_ENV=production ASSET_PATH='./' node_modules/.bin/webpack --progress --colors --config ./build/webpack.config.production.babel.js",

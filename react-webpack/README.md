@@ -77,3 +77,4 @@ open `http://localhost:4200` show your app
 - [ ] Add open browser default
 - [ ] Add chunksName after code splitting (default name is 0, 1 ,2 ...)
 - [ ] Use plugin optimizing webpack
+- [ ] Add prettier for code style
