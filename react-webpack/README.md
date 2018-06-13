@@ -53,13 +53,9 @@ React SPA Project build, it use webpack v4, react-router v4 and redux . use webp
 
 ## Use
 
-```sh
-$ yarn
-# open development
-$ yarn dev
-# build
-$ yarn build
-```
+1. `npm i` install package
+2. `npm run start` run code in webpack-dev-server
+3. `npm run build` build code for production
 
 open `http://localhost:4200` show your app
 
