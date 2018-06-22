@@ -1,6 +1,17 @@
-body{
+ul {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.screen {
   display: flex;
-  border-radius: 10px;
-  background-color: #fff;
-  transform: inherit;
+  flex-direction: row;
+  .slider-container {
+    width: 256px;
+  }
+  .layout {
+    flex: 1;
+  }
 }

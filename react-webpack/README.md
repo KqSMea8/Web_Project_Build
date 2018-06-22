@@ -61,7 +61,7 @@ open `http://localhost:4200` show your app
 
 > note: you can change PORT in package.json `"dev": "cross-env NODE_ENV=development PORT=4200 node build/webpack.dev.config.js"`
 
-## Feature
+## TO-DO
 
 - [x] Add redux
 - [x] Add react-router
@@ -69,8 +69,10 @@ open `http://localhost:4200` show your app
 - [x] react-hot-loader not work in react-routerv4
 - [x] Separation hot reload from production (dev and production all have hot reload now)
 - [x] Add open browser default
+- [x] Add redux-devtools-extension
+- [x] Add prettier for code style
 - [ ] Add Proxy for webpack-dev-server
 - [ ] Use ES6 in webpack config
-- [x] Add redux-devtools-extension
+- [ ] Add webpage UI
+- [ ] Add ajax function
 - [ ] Add mock server for ajax data
-- [x] Add prettier for code style

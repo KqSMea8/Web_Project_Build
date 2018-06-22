@@ -1,31 +1,29 @@
-import React, { Component } from 'react'
-import { hot } from 'react-hot-loader'
+import React, { Component } from "react";
+import { hot } from "react-hot-loader";
 import {
   HashRouter as Router // HashRouter / BrowserRouter
-} from 'react-router-dom'
-import { renderRoutes } from 'react-router-config'
+} from "react-router-dom";
+import { renderRoutes } from "react-router-config";
 
-import 'normalize.css'
-import './styles.scss'
-import RouterLink from './views/RouterLink'
-import ContnetRouter from './views/Content/router'
+import "normalize.css";
+import "./styles.scss";
+import RouterLink from "./views/RouterLink";
+import ContnetRouter from "./views/Content/router";
 
 // 合并路由
-const routes = [
-  ...ContnetRouter
-]
+const routes = [...ContnetRouter];
 
 class App extends Component {
-  render () {
+  render() {
     return (
-      <Router>
-        <React.Fragment>
+      <div className="screen">
+        <div className="slider-container">
           <RouterLink />
-          {renderRoutes(routes)}
-        </React.Fragment>
-      </Router>
-    )
+        </div>
+        <div className="layout">{renderRoutes(routes)}</div>
+      </div>
+    );
   }
 }
 
-export default hot(module)(App)
+export default hot(module)(App);
