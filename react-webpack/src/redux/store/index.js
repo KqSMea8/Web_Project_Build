@@ -1,14 +1,21 @@
+import { createStore, applyMiddleware, compose } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
 
-import { createStore, applyMiddleware } from 'redux'
+import reducers from "../reducers";
+import middleware from "../middleware";
 
-import reducers from '../reducers'
-import middleware from '../middleware'
-
-const initialState = {}
+const initialState = {};
 
 // applyMiddleware(thunk, middleware)
-let enhancer = applyMiddleware(...middleware)
 
-const store = createStore(reducers, initialState, enhancer)
+const composeEnhancers = composeWithDevTools({
+  // options like actionSanitizer, stateSanitizer
+});
 
-export default store
+const store = createStore(
+  reducers,
+  initialState,
+  composeEnhancers(applyMiddleware(...middleware))
+);
+
+export default store;

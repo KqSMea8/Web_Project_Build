@@ -45,7 +45,7 @@
     "react-hot-loader": "^4.3.2",
     "react-loadable": "^5.4.0",
     "react-router-redux": "^5.0.0-alpha.9",
-    "redux-devtools-extension": "^2.13.2",
+    "redux-devtools-extension": "^2.13.5",
     "sass-loader": "^7.0.3",
     "standard": "^11.0.1",
     "style-loader": "^0.21.0",
@@ -72,7 +72,7 @@
   "scripts": {
     "linc": "node_modules/.bin/standard",
     "fix": "node_modules/.bin/standard --fix",
-    "dev": "cross-env NODE_ENV=development PORT=4200 node build/webpack.config.dev.js",
+    "dev": "cross-env NODE_ENV=development PORT=4500 node build/webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production node_modules/.bin/webpack --progress --colors --config ./build/webpack.config.production.js",
     "build:online": "cross-env NODE_ENV=production_online node_modules/.bin/webpack --progress --colors --config ./build/webpack.config.production.js",
     "precommit": "lint-staged"
