@@ -7,8 +7,33 @@
     a{
       color: #fff;
     }
-    h1 {
-      margin: 0;
+    .logo {
+      height: 64px;
+      line-height: 64px;
+      padding-left: 24px;
+      background-color: #002140;
+      overflow: hidden;
+      img {
+        height: 32px;
+        vertical-align: middle;
+      }
+      h1 {
+        margin: 0 0 0 12px;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 20px;
+      }
+    }
+    .menu {
+      width: 100%;
+      padding: 16px 0;
+      .meun-item-title {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 24px;
+        padding-right: 34px;
+      }
     }
   }
 }
