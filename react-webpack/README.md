@@ -71,8 +71,8 @@ open `http://localhost:4200` show your app
 - [x] Add open browser default
 - [x] Add redux-devtools-extension
 - [x] Add prettier for code style
+- [x] Add webpage UI
 - [ ] Add Proxy for webpack-dev-server
 - [ ] Use ES6 in webpack config
-- [ ] Add webpage UI
 - [ ] Add ajax function
 - [ ] Add mock server for ajax data
