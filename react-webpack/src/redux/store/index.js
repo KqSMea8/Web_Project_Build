@@ -1,7 +1,7 @@
 import thunk from "redux-thunk";
 import { createBrowserHistory } from "history";
 
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
 import { connectRouter, routerMiddleware } from "connected-react-router";
 
