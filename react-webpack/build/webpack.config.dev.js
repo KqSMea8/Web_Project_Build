@@ -11,7 +11,8 @@ config.entry.main = (config.entry.main || []).concat([
 ]);
 
 config.plugins = (config.plugins || []).concat([
-  new webpack.HotModuleReplacementPlugin()
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NamedModulesPlugin()
 ]);
 
 const compiler = webpack(config);

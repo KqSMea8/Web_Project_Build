@@ -7,13 +7,12 @@
         "modules": false
       }
     ],
-    [
-      "@babel/preset-stage-0",
-      {
-        "decoratorsLegacy": true
-      }
-    ],
     "@babel/preset-react"
   ],
-  "plugins": ["react-hot-loader/babel"]
+  "plugins": [
+    "react-hot-loader/babel",
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-function-bind"
+  ]
 }
