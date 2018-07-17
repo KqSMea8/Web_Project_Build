@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import {
-  HashRouter as Router // HashRouter / BrowserRouter
+  BrowserRouter as Router // HashRouter / BrowserRouter
 } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 
@@ -16,15 +16,16 @@ const routes = [...ContnetRouter];
 class App extends Component {
   render() {
     return (
-      <div className="screen">
-        <div className="slider-container">
-          <RouterLink />
+      <Router>
+        <div className="screen">
+          <div className="slider-container">
+            <RouterLink />
+          </div>
+          <div className="layout">{renderRoutes(routes)}</div>
         </div>
-        <div className="layout">{renderRoutes(routes)}</div>
-      </div>
+      </Router>
     );
   }
 }
 
 export default hot(module)(App);
-// export default App;
