@@ -6,7 +6,7 @@
   "author": "Mark_Zhang",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.0.0-beta.53",
+    "@babel/polyfill": "^7.0.0-beta.54",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "connected-react-router": "^4.3.0",
@@ -22,13 +22,13 @@
     "styled-components": "^3.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.53",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.53",
-    "@babel/plugin-proposal-function-bind": "^7.0.0-beta.53",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.53",
-    "@babel/preset-env": "^7.0.0-beta.53",
-    "@babel/preset-react": "^7.0.0-beta.53",
-    "autoprefixer": "^8.6.5",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-function-bind": "^7.0.0-beta.54",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-react": "^7.0.0-beta.54",
+    "autoprefixer": "^9.0.1",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.0-beta",
     "clean-webpack-plugin": "^0.1.19",
@@ -51,10 +51,10 @@
     "standard": "^11.0.1",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
-    "webpack": "^4.16.0",
+    "webpack": "^4.16.3",
     "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
     "webpack-stylish": "^0.1.8"
   },
   "standard": {
