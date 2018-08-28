@@ -55,17 +55,3 @@ gulp.task('reCollector',()=>{
 gulp.task('default', ()=> {
     runSequence('clean', ['css', 'js'], 'reCollector');
 });
-
-
-
-
-gulp.task('a',function(cb){
-    return setTimeout(function () {
-        console.log(1);
-        cb();
-    },3000);
-});
-gulp.task('b',()=>{console.log(2)});
-gulp.task('ab',()=>{
-    runSequence('a','b');
-});
