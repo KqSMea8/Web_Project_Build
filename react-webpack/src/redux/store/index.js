@@ -3,9 +3,9 @@ import { createBrowserHistory } from "history";
 
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
-import { connectRouter, routerMiddleware } from "connected-react-router";
+import { routerMiddleware } from 'connected-react-router';
 
-import reducers from "../reducers";
+import createRootReducer from "../reducers";
 
 export const history = createBrowserHistory();
 const initialState = {};
@@ -17,7 +17,7 @@ const composeEnhancers = composeWithDevTools({
 });
 
 const store = createStore(
-  connectRouter(history)(reducers),
+  createRootReducer(history),
   initialState,
   composeEnhancers(applyMiddleware(thunk, routerMiddleware(history)))
 );
